@@ -1,0 +1,240 @@
+body {
+  background-color: #e7f6f9;
+}
+
+/* CSS for Folder Structure */
+.app-header {
+  padding-left: 10px; 
+  font-size: 20px; 
+  font-weight: bold;
+  color: #333; 
+}
+
+.folders-container{
+  padding: 10px;
+}
+
+/* CSS for Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(233, 243, 240, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(7, 0, 0, 0.889);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.modal-title {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+#folder-name{
+  margin-top: 5px;
+  width: 100%;
+  background-color: rgba(233, 243, 240, 0.4);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px;
+}
+
+.cancel-button,
+.create-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #eaeaea;
+  color: #444;
+}
+.cancel-button:hover {
+  background-color: #444;
+  color: #eaeaea;
+}
+
+.create-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.create-button:hover {
+  background-color: #76ce68;
+  color: #fff;
+}
+
+/* CSS for Folder */
+.folder {
+  margin: 10px 0px 10px 20px;
+  border: 2px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+}
+
+.folder-header svg {
+  margin-right: 10px;
+  color: #182d42;
+}
+
+.folder-header span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.toggle-button:hover{
+  background-color: #f2f2f2;
+}
+
+.subfolders {
+  margin-left: 20px;
+}
+
+/* CSS for buttons */
+.buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button {
+  margin-left: 10px;
+  border: 2px solid #dbd6d6;
+  border-radius: 16px;
+  padding: 3px;
+}
+
+.delete-button:hover {
+  color: #9e0810;
+  border: 2px solid #9e0810;
+}
+
+.add-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #7fde95;
+  color: #fff;
+  margin-left: 25px;
+  margin-right: 5px;
+}
+
+.add-button:hover {
+  background-color: #81c5fe;
+}
+
+/* CSS for form */
+label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* CSS for mobile devices */
+@media only screen and (max-width: 768px) {
+  .app-header {
+    font-size: 16px;
+  }
+
+  .folder {
+    margin: 10px 0px 10px 10px;
+  }
+
+  .folder-header span {
+    font-size: 16px;
+  }
+
+  .buttons-container {
+    flex-wrap: wrap;
+  }
+
+  .add-button {
+    margin: 10px 5px;
+    font-size: 14px;
+  }
+
+  .delete-button {
+    margin: 10px 5px;
+    font-size: 14px;
+  }
+}
+
+/* CSS for tablet devices */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .app-header {
+    font-size: 18px;
+  }
+
+  .folder {
+    margin: 10px 0px 10px 15px;
+  }
+
+  .folder-header span {
+    font-size: 18px;
+  }
+
+  .add-button {
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 16px;
+  }
+
+  .delete-button {
+    margin-left: 5px;
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
+
+.no-subfolders{
+  margin-left: 20px; 
+  margin-top: 5px;
+  color: #999; 
+  font-style: italic; 
+}
