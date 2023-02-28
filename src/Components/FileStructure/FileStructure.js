@@ -14,11 +14,7 @@ const FileStructure = () => {
       </header>
       
       <div className="folders-container">{renderFolders(null)}</div> 
-      {/* Why passing null here? */}
-      {
-        // showModal && console.log(renderFolders(null))
-      }
-      
+    
       {showModal && (
         <div className="modal">
           <div className="modal-content">
