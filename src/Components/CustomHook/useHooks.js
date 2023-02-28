@@ -64,11 +64,7 @@ const useHooks = () => {
   };
 
   const renderFolders = (parentId) => {
-    const subFolders = folders.filter(folder => folder.parent === parentId);
-    if (subFolders.length === 0) {
-      return <div>No Folder</div>;
-    }
-    return subFolders.map(folder => {
+    return folders.filter(folder => folder.parent === parentId).map(folder => {
       const hasSubfolders = folders.some(f => f.parent === folder.id);
       return (
         <div className="folder" key={folder.id}>
