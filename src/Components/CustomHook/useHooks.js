@@ -7,12 +7,12 @@ const useHooks = () => {
   const [folders, setFolders] = useState([{ 
     id: 1, 
     name: 'root', 
-    parent: null, 
+    parent: '', 
     isOpen: true 
   }]);
   const [showModal, setShowModal] = useState(false);
   const [folderName, setFolderName] = useState('');
-  const [parentId, setParentId] = useState(null);
+  const [parentId, setParentId] = useState('');
 
   //Functions
   const handleModalOpen = (id) => {
@@ -23,7 +23,7 @@ const useHooks = () => {
   const handleModalClose = () => {
     setShowModal(false);
     setFolderName('');
-    setParentId(null);
+    setParentId(''); 
   };
 
   const handleFolderNameChange = (event) => {
@@ -56,14 +56,18 @@ const useHooks = () => {
   const handleToggleFolder = (folderId) => {
     setFolders(folders.map(folder => {
       if (folder.id === folderId) {
-        return { ...folder, isOpen: !folder.isOpen };
-      } else {
+        return { 
+          ...folder, 
+          isOpen: !folder.isOpen 
+        };
+      } 
+      else {
         return folder;
       }
     }));
   };
 
-  const renderFolders = (parentId) => {
+  const renderFolders = (parentId) => { 
     return folders.filter(folder => folder.parent === parentId).map(folder => {
       const hasSubfolders = folders.some(f => f.parent === folder.id);
       return (
@@ -77,9 +81,10 @@ const useHooks = () => {
             <FontAwesomeIcon icon={folder.isOpen ? faFolderOpen : faFolder} onClick={() => handleToggleFolder(folder.id)} />
             <span>{folder.name}</span>
             <div className="buttons-container">
-              {folder.id !== 1 && (
-                <FontAwesomeIcon className="delete-button" icon={faRemove} onClick={() => handleDeleteFolder(folder.id)}/>   
-              )}
+              { folder.id !== 1 && (
+                  <FontAwesomeIcon onClick={() => handleDeleteFolder(folder.id)}  className="delete-button" icon={faRemove} />   
+                )
+              }
               <button className="add-button" onClick={() => handleModalOpen(folder.id)}>
                 <FontAwesomeIcon icon={faPlus} /> New
               </button>

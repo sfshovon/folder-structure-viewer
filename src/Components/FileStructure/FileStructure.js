@@ -13,8 +13,8 @@ const FileStructure = () => {
         <h1>Folder Structure</h1>
       </header>
       
-      <div className="folders-container">{renderFolders(null)}</div> 
-    
+      <div className="folders-container">{renderFolders('')}</div> 
+      
       {showModal && (
         <div className="modal">
           <div className="modal-content">
