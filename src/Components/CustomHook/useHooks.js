@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
 const useHooks = () => {
-  //States
   const [folders, setFolders] = useState([{ 
     id: 1, 
     name: 'root', 
@@ -13,23 +12,18 @@ const useHooks = () => {
   const [showModal, setShowModal] = useState(false);
   const [folderName, setFolderName] = useState('');
   const [parentId, setParentId] = useState('');
-
-  //Functions
   const handleModalOpen = (id) => {
     setParentId(id);
     setShowModal(true);
   };
-
   const handleModalClose = () => {
     setShowModal(false);
     setFolderName('');
     setParentId(''); 
   };
-
   const handleFolderNameChange = (event) => {
     setFolderName(event.target.value);
   };
-
   const handleAddFolder = () => {
     if (folderName.trim() === '') {
       alert('Folder name cannot be empty');
@@ -44,7 +38,6 @@ const useHooks = () => {
     setFolders([...folders, newFolder]);
     handleModalClose();
   };
-
   const handleDeleteFolder = (folderId) => {
     const folderToDelete = folders.find(folder => folder.id === folderId);
     if (!window.confirm(`Are you sure you want to delete the folder "${folderToDelete.name}"?`)) {
@@ -52,7 +45,6 @@ const useHooks = () => {
     }
     setFolders(folders.filter(folder => folder.id !== folderId));
   };
-
   const handleToggleFolder = (folderId) => {
     setFolders(folders.map(folder => {
       if (folder.id === folderId) {
@@ -66,7 +58,6 @@ const useHooks = () => {
       }
     }));
   };
-
   const renderFolders = (parentId) => { 
     return folders.filter(folder => folder.parent === parentId).map(folder => {
       const hasSubfolders = folders.some(f => f.parent === folder.id);
@@ -100,7 +91,6 @@ const useHooks = () => {
       );
     });
   };
-  
   return {
     folders, setFolders, showModal, setShowModal, folderName, setFolderName, parentId, setParentId, handleModalOpen, handleModalClose, handleFolderNameChange, handleAddFolder, handleDeleteFolder,handleToggleFolder, renderFolders
   }

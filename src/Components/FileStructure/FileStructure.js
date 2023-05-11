@@ -4,17 +4,14 @@ import useHooks from '../CustomHook/useHooks';
 import './FileStructure.css';
 
 const FileStructure = () => {
-  const { showModal,  folderName, handleModalClose, 
-    handleFolderNameChange, handleAddFolder, renderFolders } = useHooks();
+  const { showModal,  folderName, handleModalClose, handleFolderNameChange, handleAddFolder, renderFolders } = useHooks();
 
   return (
     <div>
       <header className="app-header">
         <h1>Folder Structure</h1>
       </header>
-      
       <div className="folders-container">{renderFolders('')}</div> 
-      
       {showModal && (
         <div className="modal">
           <div className="modal-content">
